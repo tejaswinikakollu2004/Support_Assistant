@@ -1,0 +1,135 @@
+/* GLOBAL BACKGROUND IMPROVEMENT */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(270deg, #1f4037, #99f2c8, #1f4037);
+    background-size: 600% 600%;
+    animation: gradientMove 10s ease infinite;
+}
+
+/* ANIMATED BACKGROUND */
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* HERO SECTION ENHANCEMENT */
+.hero {
+    height: 90vh;
+    text-align: center;
+    color: rgb(182, 5, 87);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInUp 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* BUTTON STYLING */
+button {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* FEATURES SECTION */
+.features {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgb(31, 155, 217)0);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    width: 250px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ABOUT SECTION */
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background: #64e0d1;
+}
+
+/* DEMO SECTION */
+.demo {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* TEXTAREA */
+textarea {
+    width: 60%;
+    height: 120px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSE BOX */
+#responseBox {
+    margin-top: 20px;
+    padding: 15px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    background: #a3447c;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease;
+}
+
+/* FOOTER IMPROVEMENT */
+footer {
+    background: #0f2027;
+    color: rgb(221, 92, 208);
+    text-align: center;
+    padding: 20px;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

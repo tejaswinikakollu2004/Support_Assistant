@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartSupport AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2>SmartSupport AI</h2>
+    <p class="tagline">AI Powered Email Automation System</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>AI Email Support Assistant</h1>
+    <p>Generate professional replies instantly using AI & NLP</p>
+    <button onclick="document.querySelector('.demo').scrollIntoView({behavior:'smooth'})">
+        Try Demo
+    </button>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <h2>Key Features</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>⚡ Fast Response</h3>
+            <p>Instant email reply generation within seconds.</p>
+        </div>
+        <div class="card">
+            <h3>🤖 AI Powered</h3>
+            <p>Uses Machine Learning & NLP.</p>
+        </div>
+        <div class="card">
+            <h3>📈 Productivity</h3>
+            <p>Improves efficiency & reduces effort.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DEMO -->
+<section class="demo">
+    <h2>Live Demo</h2>
+    <textarea id="userInput" placeholder="Enter your query..."></textarea><br><br>
+    <button onclick="sendMessage()">Generate Reply</button>
+    <div id="responseBox"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 SmartSupport AI | Developed by Tejaswini</p>
+    <p>Python | Flask | Machine Learning | NLP</p>
+</footer>
+
+<script>
+async function sendMessage() {
+    let input = document.getElementById("userInput").value;
+
+    let response = await fetch("/predict", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: input })
+    });
+
+    let data = await response.json();
+
+    // Typing animation
+    let text = data.reply;
+    let i = 0;
+    let box = document.getElementById("responseBox");
+    box.innerText = "";
+
+    function typeEffect() {
+        if (i < text.length) {
+            box.innerText += text.charAt(i);
+            i++;
+            setTimeout(typeEffect, 20);
+        }
+    }
+
+    typeEffect();
+}
+</script>
+
+</body>
+</html>
